@@ -1,0 +1,34 @@
+<style>
+  .link-spacing {
+    margin-right: 30px; 
+  }
+</style>
+
+<table border="1" style="width:100%">
+  <thead>
+  
+    <tr>
+      <th>Author Name</th>
+      <th>Author Surname</th>
+      <th>Actions</th>
+    </tr>
+  
+  </thead>
+  <tbody>
+
+<% @authors.each do |author| %>
+
+    <tr style="text-align: center;">
+      <td><%= author.author_name %></td> 
+      <td><%= author.author_surname %></td> 
+      <td style="text-align: center;" >
+        <%= link_to "Show" , author_path(author) , class: "link-spacing"%>
+        <%= link_to "Edit" , edit_author_path(author) , class: "link-spacing" %>
+        <%= link_to "Delete" , author_path(author), method: :delete , data: { confirm: "Are you sure?"} , class: "link-spacing" %>
+      </td>    
+
+    </tr>
+
+    <% end %>
+  </tbody>
+</table>

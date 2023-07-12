@@ -1,0 +1,6 @@
+<%= form_with model: @author do |form| %>
+	<%= form.text_field :author_name , placeholder: "Name" %>
+<%= form.text_field :author_surname , placeholder: "Surname" %>
+
+	<%= form.submit "Update Post" %>
+<%end%>
