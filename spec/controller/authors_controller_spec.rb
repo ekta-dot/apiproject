@@ -102,6 +102,7 @@ RSpec.describe Api::V1::AuthorsController, type: :controller do
     it "returns a JSON response with an error message" do
       delete :destroy, params: { id: 123 }
       expect(response).to have_http_status(:not_found)
+      
       expect(JSON.parse(response.body)).to eq({ "error" => "Author not found" })
     end
   end
